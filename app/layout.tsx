@@ -51,9 +51,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
       <body
-        className={`${cormorant.variable} ${dmSans.variable} ${jetbrains.variable} font-body antialiased selection:bg-emerald-sig/30 selection:text-emerald-sig`}
+        className={`${cormorant.variable} ${dmSans.variable} ${jetbrains.variable} font-body antialiased bg-[#000000] text-white selection:bg-emerald-sig/30 selection:text-emerald-sig`}
       >
-        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
           <Toaster position="bottom-right" theme="dark" />
         </ThemeProvider>

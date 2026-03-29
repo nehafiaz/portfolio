@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import TextReveal from "../shared/TextReveal";
-import MagneticButton from "../shared/MagneticButton";
 
 const personalityPills = [
   "Software Engineer",
@@ -28,7 +27,7 @@ export default function About() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="w-12 h-[1px] bg-emerald-sig" />
+            <div className="w-12 h-px bg-emerald-sig" />
             <span className="font-mono text-xs tracking-[0.4em] text-text-2 uppercase">
               Software Engineer
             </span>

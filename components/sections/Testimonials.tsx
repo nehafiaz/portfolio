@@ -7,19 +7,27 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     id: "1",
-    name: "Alex Rivera",
-    role: "CTO",
-    company: "Luxe Media",
-    text: "Neha's ability to translate complex 3D concepts into performant web interfaces is unparalleled. She is a visionary developer.",
+    name: "Marcus Thompson",
+    role: "VP of Engineering",
+    company: "TechFlow",
+    text: "Neha has a rare talent for architecting scalable systems. Her focus on clean code and performance transformed our application into a high-velocity product.",
     image: "https://i.pravatar.cc/150?u=1",
   },
   {
     id: "2",
-    name: "Sarah Chen",
-    role: "Founding Engineer",
-    company: "Vertex Protocol",
-    text: "The web3 dashboard Neha built for us has become our product's signature. Pure pixel-perfection and high performance.",
+    name: "Elena Rossi",
+    role: "Lead Product Designer",
+    company: "Swiftly",
+    text: "Working with Neha was a game-changer. She doesn't just write code; she solves complex problems with elegant software solutions. Her attention to detail is exceptional.",
     image: "https://i.pravatar.cc/150?u=2",
+  },
+  {
+    id: "3",
+    name: "Jordan Lee",
+    role: "Tech Lead",
+    company: "Nexus Apps",
+    text: "Neha's expertise in React and Next.js is evident in every line of code. She delivered a robust, mobile-first experience that exceeded all our performance benchmarks.",
+    image: "https://i.pravatar.cc/150?u=3",
   },
 ];
 
@@ -34,7 +42,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               className="flex items-center gap-4 mb-4"
             >
-              <div className="w-[1px] h-12 bg-emerald-sig" />
+              <div className="w-px h-12 bg-emerald-sig" />
               <span className="font-mono text-xs tracking-[0.4em] text-text-2 uppercase">
                 What They Say
               </span>
@@ -42,7 +50,7 @@ export default function Testimonials() {
             <h2 className="text-5xl md:text-7xl font-display text-text-1">Kind Words</h2>
          </div>
 
-         <div className="grid gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-12">
             {testimonials.map((t, i) => (
                <motion.div
                  key={t.id}
@@ -50,7 +58,9 @@ export default function Testimonials() {
                  whileInView={{ opacity: 1, y: 0 }}
                  viewport={{ once: true }}
                  transition={{ delay: i * 0.2 }}
-                 className="relative p-10 border border-border bg-bg backdrop-blur-md rounded-[2.5rem] hover:border-emerald-sig/30 transition-all group lg:last:ml-24"
+                 className={`relative p-8 md:p-10 border border-border bg-bg backdrop-blur-md rounded-[2.5rem] hover:border-emerald-sig/30 transition-all group ${
+                   i === 1 ? "lg:ml-12" : i === 2 ? "lg:ml-24" : ""
+                 }`}
                >
                   <Quote className="absolute top-8 right-8 text-emerald-sig/10 w-24 h-24 -z-10 group-hover:text-emerald-sig/20 transition-colors" />
                   

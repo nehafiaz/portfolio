@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,10 +17,10 @@ export default function Footer() {
          <div className="z-10 flex flex-col items-center gap-6">
             <span className="text-3xl font-display text-emerald-sig font-bold">N.</span>
             <div className="flex gap-8 text-sm font-mono tracking-widest text-text-2 uppercase">
-               <a href="#about" className="hover:text-text-1 transition-colors">About</a>
-               <a href="#work" className="hover:text-text-1 transition-colors">Work</a>
-               <a href="#skills" className="hover:text-text-1 transition-colors">Skills</a>
-               <a href="#contact" className="hover:text-text-1 transition-colors">Contact</a>
+               <Link href="/about" className="hover:text-text-1 transition-colors">About</Link>
+               <Link href="/work" className="hover:text-text-1 transition-colors">Work</Link>
+               <Link href="/skills" className="hover:text-text-1 transition-colors">Skills</Link>
+               <Link href="/contact" className="hover:text-text-1 transition-colors">Contact</Link>
             </div>
          </div>
 

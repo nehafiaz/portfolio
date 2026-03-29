@@ -50,14 +50,6 @@ export default function FeaturedProjects() {
               </h2>
            </div>
            
-           <motion.div
-             initial={{ opacity: 0 }}
-             whileInView={{ opacity: 1 }}
-             viewport={{ once: true }}
-             className="text-right hidden lg:block"
-           >
-              <span className="text-[12rem] font-display font-light text-text-1/10 dark:text-text-1/5 absolute -top-12 right-0">WORK</span>
-           </motion.div>
         </div>
 
         <div className="space-y-32">

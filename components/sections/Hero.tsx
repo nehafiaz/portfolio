@@ -39,20 +39,20 @@ export default function Hero() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 4.5, duration: 0.8 }}
-           className="flex flex-wrap gap-6"
+           className="flex flex-col sm:flex-row gap-4 sm:gap-6"
         >
           <MagneticButton>
-            <a
-              href="#work"
-              className="px-10 py-5 bg-emerald-sig text-bg font-semibold rounded-full hover:scale-105 transition-transform"
+            <Link
+              href="/work"
+              className="px-8 md:px-10 py-4 md:py-5 bg-emerald-sig text-bg font-semibold rounded-full hover:scale-105 transition-transform inline-block text-center"
             >
               View My Work
-            </a>
+            </Link>
           </MagneticButton>
           <MagneticButton>
             <Link
-              href="#contact"
-              className="px-10 py-5 border border-border text-text-1 font-semibold rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+              href="/contact"
+              className="px-8 md:px-10 py-4 md:py-5 border border-border text-text-1 font-semibold rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors inline-block text-center"
             >
               Let's Connect
             </Link>

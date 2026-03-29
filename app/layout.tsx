@@ -5,6 +5,13 @@ import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 
+// Global Shared Components
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import Preloader from '@/components/layout/Preloader'
+import CustomCursor from '@/components/shared/CustomCursor'
+import ScrollProgress from '@/components/shared/ScrollProgress'
+
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const cormorant = Cormorant_Garamond({
@@ -54,7 +61,14 @@ export default function RootLayout({
         className={`${cormorant.variable} ${dmSans.variable} ${jetbrains.variable} font-body antialiased bg-[#000000] text-white selection:bg-emerald-sig/30 selection:text-emerald-sig`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
+          <Preloader />
+          <CustomCursor />
+          <ScrollProgress />
+          <Navbar />
+          <main id="main" className="relative bg-background">
+            {children}
+          </main>
+          <Footer />
           <Toaster position="bottom-right" theme="dark" />
         </ThemeProvider>
       </body>

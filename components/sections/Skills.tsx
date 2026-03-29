@@ -5,23 +5,23 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import TextReveal from "../shared/TextReveal";
 
 /* ─── Data ─────────────────────────────────────────────────────────────────── */
-const rings = [
+const RING_DATA = [
   {
-    radius: 140,
+    baseRadius: 140,
     speed: 22,
     direction: 1,
     items: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     color: "var(--emerald)",
   },
   {
-    radius: 240,
+    baseRadius: 240,
     speed: 32,
     direction: -1,
     items: ["Node.js", "PostgreSQL", "Prisma", "Python", "GraphQL"],
     color: "var(--emerald-dim)",
   },
   {
-    radius: 340,
+    baseRadius: 340,
     speed: 44,
     direction: 1,
     items: ["Three.js", "Framer Motion", "Figma", "Docker", "AWS", "CI/CD"],
@@ -131,7 +131,7 @@ function RadarSweep({ radius }: { radius: number }) {
 
 /* ─── Main component ─────────────────────────────────────────────────────────── */
 export default function Skills() {
-  const [scale, setScale] = useState(1);
+  const [radiiSet, setRadiiSet] = useState([140, 240, 340]);
   const particles = useParticles(28);
   const coreControls = useAnimation();
 
@@ -139,17 +139,22 @@ export default function Skills() {
     const handleResize = () => {
       const width = window.innerWidth;
       if (width < 640) {
-        setScale(Math.max(0.4, (width - 40) / 750));
+        setRadiiSet([100, 160, 220]);
       } else if (width < 1024) {
-        setScale(Math.max(0.7, (width - 80) / 1000));
+        setRadiiSet([120, 200, 280]);
       } else {
-        setScale(1);
+        setRadiiSet([140, 240, 340]);
       }
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const rings = RING_DATA.map((ring, i) => ({
+    ...ring,
+    radius: radiiSet[i],
+  }));
 
   // Pulse loop for the core
   useEffect(() => {
@@ -265,10 +270,9 @@ export default function Skills() {
       {/* ── Orbital system ── */}
       <div 
         className="relative w-full max-w-4xl mt-32 md:mt-52 aspect-square flex items-center justify-center select-none"
-        style={{ transform: `scale(${scale})`, transformOrigin: 'center center' }}
       >
-        {/* Radar sweep (innermost ring radius) */}
-        <RadarSweep radius={340} />
+        {/* Radar sweep (outermost ring radius) */}
+        <RadarSweep radius={radiiSet[2]} />
 
         {/* Central Core */}
         <motion.div

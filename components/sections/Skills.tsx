@@ -131,8 +131,25 @@ function RadarSweep({ radius }: { radius: number }) {
 
 /* ─── Main component ─────────────────────────────────────────────────────────── */
 export default function Skills() {
+  const [scale, setScale] = useState(1);
   const particles = useParticles(28);
   const coreControls = useAnimation();
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setScale(Math.max(0.4, (width - 40) / 750));
+      } else if (width < 1024) {
+        setScale(Math.max(0.7, (width - 80) / 1000));
+      } else {
+        setScale(1);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Pulse loop for the core
   useEffect(() => {
@@ -246,8 +263,10 @@ export default function Skills() {
       </div>
 
       {/* ── Orbital system ── */}
-      <div className="relative w-full max-w-4xl mt-52 aspect-square md:aspect-video flex items-center justify-center select-none overflow-hidden sm:overflow-visible">
-
+      <div 
+        className="relative w-full max-w-4xl mt-32 md:mt-52 aspect-square flex items-center justify-center select-none"
+        style={{ transform: `scale(${scale})`, transformOrigin: 'center center' }}
+      >
         {/* Radar sweep (innermost ring radius) */}
         <RadarSweep radius={340} />
 
@@ -353,12 +372,12 @@ export default function Skills() {
                         boxShadow: "0 0 20px -4px var(--emerald)",
                         transition: { duration: 0.2 },
                       }}
-                      className="px-4 py-2 bg-bg-surface/90 border border-border/50 rounded-full backdrop-blur-sm text-text-2 whitespace-nowrap shadow-xl cursor-pointer -translate-x-1/2 -translate-y-1/2 transition-shadow"
+                      className="px-3 py-1.5 md:px-4 md:py-2 bg-bg-surface/90 border border-border/50 rounded-full backdrop-blur-sm text-text-2 whitespace-nowrap shadow-xl cursor-pointer -translate-x-1/2 -translate-y-1/2 transition-shadow"
                       style={{
                         transformOrigin: "center",
                       }}
                     >
-                      <span className="font-mono text-sm tracking-wide">
+                      <span className="font-mono text-xs md:text-sm tracking-wide">
                         {item}
                       </span>
                     </motion.div>
@@ -384,7 +403,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="z-10 mt-64 flex flex-wrap items-center justify-center gap-12 px-6"
+        className="z-10 mt-32 md:mt-64 flex flex-wrap items-center justify-center gap-8 md:gap-12 px-6"
       >
         {[
           { value: "15+", label: "Technologies" },

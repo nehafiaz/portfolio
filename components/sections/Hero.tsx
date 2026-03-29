@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import MagneticButton from "../shared/MagneticButton";
 import TextReveal from "../shared/TextReveal";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -15,9 +16,9 @@ export default function Hero() {
           transition={{ delay: 3.2, duration: 0.8 }}
           className="flex items-center gap-4 mb-6"
         >
-          <div className="w-12 h-[1px] bg-emerald-sig" />
+          <div className="w-12 h-px bg-emerald-sig" />
           <span className="font-mono text-xs tracking-[0.4em] text-muted-foreground dark:text-slate-300 uppercase">
-            Software Engineer @ 2025
+            Software Engineer
           </span>
         </motion.div>
 
@@ -31,7 +32,7 @@ export default function Hero() {
           transition={{ delay: 4, duration: 1 }}
           className="text-xl md:text-3xl font-display italic text-muted-foreground dark:text-slate-300 max-w-2xl mb-12"
         >
-          I craft interfaces that think, and code that breathes.
+         Transforming complex problems into elegant software solutions.
         </motion.p>
 
         <motion.div
@@ -49,12 +50,12 @@ export default function Hero() {
             </a>
           </MagneticButton>
           <MagneticButton>
-            <a
+            <Link
               href="#contact"
               className="px-10 py-5 border border-border-hover text-foreground dark:text-white font-semibold rounded-full hover:bg-black/10 dark:hover:bg-white/5 transition-colors"
             >
               Let's Connect
-            </a>
+            </Link>
           </MagneticButton>
         </motion.div>
       </div>
@@ -82,7 +83,7 @@ export default function Hero() {
         transition={{ delay: 5.5, duration: 1 }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
       >
-        <div className="w-[1px] h-20 bg-gradient-to-bottom from-transparent via-border to-transparent relative overflow-hidden">
+        <div className="w-px h-20 bg-gradient-to-bottom from-transparent via-border to-transparent relative overflow-hidden">
              <motion.div 
                animate={{ y: [0, 80] }}
                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}

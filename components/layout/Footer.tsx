@@ -23,13 +23,11 @@ export default function Footer() {
             </div>
          </div>
 
-         <div className="z-10 pt-12 border-t border-border w-full flex flex-col md:flex-row items-center justify-between gap-8">
+         <div className="z-10 pt-12 border-t border-border w-full flex flex-col md:flex-row ">
             <p className="text-sm font-mono text-text-3 tracking-widest uppercase">
               © {currentYear} NEHA. ALL RIGHTS RESERVED.
             </p>
-            <p className="text-sm font-display italic text-text-3">
-              Designed & built with intention by <span className="text-text-2">Neha</span> <span className="text-emerald-sig/50 hover:text-emerald-sig transition-colors cursor-default">✦</span>
-            </p>
+           
          </div>
       </div>
     </footer>

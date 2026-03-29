@@ -5,38 +5,35 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1.0000 0 0);
-  --foreground: oklch(0.2101 0.0318 264.6645);
-  --card: oklch(1.0000 0 0);
-  --card-foreground: oklch(0.2101 0.0318 264.6645);
-  --popover: oklch(1.0000 0 0);
-  --popover-foreground: oklch(0.2101 0.0318 264.6645);
-  --primary: oklch(0.6716 0.1368 48.5130);
-  --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.5360 0.0398 196.0280);
-  --secondary-foreground: oklch(1.0000 0 0);
-  --muted: oklch(0.9670 0.0029 264.5419);
-  --muted-foreground: oklch(0.5510 0.0234 264.3637);
-  --accent: oklch(0.9491 0 0);
-  --accent-foreground: oklch(0.2101 0.0318 264.6645);
-  --destructive: oklch(0.6368 0.2078 25.3313);
-  --destructive-foreground: oklch(0.9851 0 0);
-  --border: oklch(0.9276 0.0058 264.5313);
-  --input: oklch(0.9276 0.0058 264.5313);
-  --ring: oklch(0.6716 0.1368 48.5130);
-  --chart-1: oklch(0.5940 0.0443 196.0233);
-  --chart-2: oklch(0.7214 0.1337 49.9802);
-  --chart-3: oklch(0.8721 0.0864 68.5474);
-  --chart-4: oklch(0.6268 0 0);
-  --chart-5: oklch(0.6830 0 0);
-  --sidebar: oklch(0.9670 0.0029 264.5419);
-  --sidebar-foreground: oklch(0.2101 0.0318 264.6645);
-  --sidebar-primary: oklch(0.6716 0.1368 48.5130);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
-  --sidebar-accent: oklch(1.0000 0 0);
-  --sidebar-accent-foreground: oklch(0.2101 0.0318 264.6645);
-  --sidebar-border: oklch(0.9276 0.0058 264.5313);
-  --sidebar-ring: oklch(0.6716 0.1368 48.5130);
+  --background: oklch(0.985 0.003 264.6);
+  --foreground: oklch(0.2 0.03 264.6);
+  --card: oklch(0.99 0.002 264.6);
+  --card-foreground: oklch(0.2 0.03 264.6);
+  --popover: oklch(0.99 0.002 264.6);
+  --popover-foreground: oklch(0.2 0.03 264.6);
+  --primary: oklch(0.6 0.14 48.5);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.5 0.04 196);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.95 0.005 264.6);
+  --muted-foreground: oklch(0.45 0.02 264.6);
+  --accent: oklch(0.94 0.005 264.6);
+  --accent-foreground: oklch(0.2 0.03 264.6);
+  --destructive: oklch(0.6 0.2 25.3);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.9 0.01 264.6);
+  --input: oklch(0.9 0.01 264.6);
+  --ring: oklch(0.6 0.14 48.5);
+  --chart-1: oklch(0.55 0.04 196);
+  --chart-2: oklch(0.68 0.13 50);
+  --sidebar: oklch(0.97 0.005 264.6);
+  --sidebar-foreground: oklch(0.2 0.03 264.6);
+  --sidebar-primary: oklch(0.6 0.14 48.5);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.99 0.002 264.6);
+  --sidebar-accent-foreground: oklch(0.2 0.03 264.6);
+  --sidebar-border: oklch(0.9 0.01 264.6);
+  --sidebar-ring: oklch(0.6 0.14 48.5);
 
   --font-sans: Outfit, ui-sans-serif, sans-serif, system-ui;
   --font-serif: Merriweather, ui-serif, serif;
@@ -49,14 +46,14 @@
   --shadow-spread: 0px;
   --shadow-opacity: 0.05;
   --shadow-color: #000000;
-  --shadow-2xs: 0px 1px 4px 0px hsl(0 0% 0% / 0.03);
-  --shadow-xs: 0px 1px 4px 0px hsl(0 0% 0% / 0.03);
-  --shadow-sm: 0px 1px 4px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
-  --shadow: 0px 1px 4px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
-  --shadow-md: 0px 1px 4px 0px hsl(0 0% 0% / 0.05), 0px 2px 4px -1px hsl(0 0% 0% / 0.05);
-  --shadow-lg: 0px 1px 4px 0px hsl(0 0% 0% / 0.05), 0px 4px 6px -1px hsl(0 0% 0% / 0.05);
-  --shadow-xl: 0px 1px 4px 0px hsl(0 0% 0% / 0.05), 0px 8px 10px -1px hsl(0 0% 0% / 0.05);
-  --shadow-2xl: 0px 1px 4px 0px hsl(0 0% 0% / 0.13);
+  --shadow-2xs: 0px 1px 2px 0px oklch(0 0 0 / 0.02);
+  --shadow-xs: 0px 1px 2px 0px oklch(0 0 0 / 0.02);
+  --shadow-sm: 0px 1px 4px 0px oklch(0 0 0 / 0.03), 0px 1px 2px -1px oklch(0 0 0 / 0.03);
+  --shadow: 0px 1px 4px 0px oklch(0 0 0 / 0.04), 0px 1px 2px -1px oklch(0 0 0 / 0.04);
+  --shadow-md: 0px 4px 12px -2px oklch(0 0 0 / 0.04), 0px 2px 6px -1px oklch(0 0 0 / 0.04);
+  --shadow-lg: 0px 10px 25px -5px oklch(0 0 0 / 0.04), 0px 8px 10px -6px oklch(0 0 0 / 0.04);
+  --shadow-xl: 0px 20px 35px -10px oklch(0 0 0 / 0.04), 0px 10px 15px -12px oklch(0 0 0 / 0.04);
+  --shadow-2xl: 0px 25px 50px -12px oklch(0 0 0 / 0.1);
   --tracking-normal: 0rem;
   --spacing: 0.25rem;
 
@@ -71,7 +68,7 @@
   --emerald-dim: var(--secondary);
   --gold: var(--destructive);
   --gold-dim: var(--accent);
-  --border-hover: rgba(0, 0, 0, 0.25);
+  --border-hover: rgba(0, 0, 0, 0.1);
 }
 
 .dark {

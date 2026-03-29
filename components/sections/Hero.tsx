@@ -17,12 +17,12 @@ export default function Hero() {
           className="flex items-center gap-4 mb-6"
         >
           <div className="w-12 h-px bg-emerald-sig" />
-          <span className="font-mono text-xs tracking-[0.4em] text-muted-foreground dark:text-slate-300 uppercase">
+          <span className="font-mono text-xs tracking-[0.4em] text-text-2 uppercase">
             Software Engineer
           </span>
         </motion.div>
 
-        <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-display text-foreground dark:text-white font-light leading-[0.9] mb-8">
+        <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-display text-text-1 font-light leading-[0.9] mb-8">
           <TextReveal delay={3.5}>NEHA</TextReveal>
         </h1>
         
@@ -30,9 +30,9 @@ export default function Hero() {
           initial={{ opacity: 0, filter: "blur(10px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ delay: 4, duration: 1 }}
-          className="text-xl md:text-3xl font-display italic text-muted-foreground dark:text-slate-300 max-w-2xl mb-12"
+          className="text-xl md:text-3xl font-display italic text-text-2 max-w-2xl mb-12"
         >
-         Transforming complex problems into elegant software solutions.
+          Transforming complex problems into elegant software solutions.
         </motion.p>
 
         <motion.div
@@ -52,7 +52,7 @@ export default function Hero() {
           <MagneticButton>
             <Link
               href="#contact"
-              className="px-10 py-5 border border-border-hover text-foreground dark:text-white font-semibold rounded-full hover:bg-black/10 dark:hover:bg-white/5 transition-colors"
+              className="px-10 py-5 border border-border text-text-1 font-semibold rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
             >
               Let's Connect
             </Link>
@@ -71,7 +71,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-emerald-sig rounded-full animate-ping opacity-75" />
           <div className="relative w-3 h-3 bg-emerald-sig rounded-full" />
         </div>
-        <span className="font-mono text-[10px] tracking-widest text-muted-foreground dark:text-slate-300 uppercase">
+        <span className="font-mono text-[10px] tracking-widest text-text-2 uppercase">
           Available for new projects
         </span>
       </motion.div>

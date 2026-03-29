@@ -74,10 +74,14 @@ function RadarSweep({ radius }: { radius: number }) {
     const cx = size / 2;
     const cy = size / 2;
 
-    // Read CSS var at runtime
-    const sweepColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--emerald")
-      .trim() || "#f97316";
+    // Read CSS var at runtime (extracting RGB)
+    let sweepColor = "249, 115, 22"; // default
+    const rawColor = getComputedStyle(document.documentElement).getPropertyValue("--emerald").trim();
+
+    // Simple heuristic for oklch -> rgb conversion or just hex if needed
+    // But since we use oklch in globals.css, we should ideally have an RGB variant or use hex.
+    // However, I'll use a hack to get a working color for the canvas.
+    if (rawColor.includes('oklch')) sweepColor = "16, 185, 129"; // emerald-500 approx RGB
 
     const draw = () => {
       ctx.clearRect(0, 0, size, size);
@@ -87,8 +91,8 @@ function RadarSweep({ radius }: { radius: number }) {
       ctx.translate(cx, cy);
       ctx.rotate(angleRef.current);
       const arc = ctx.createRadialGradient(0, 0, 0, 0, 0, radius);
-      arc.addColorStop(0, "rgba(249,115,22,0.22)");
-      arc.addColorStop(1, "rgba(249,115,22,0)");
+      arc.addColorStop(0, `rgba(${sweepColor}, 0.22)`);
+      arc.addColorStop(1, `rgba(${sweepColor}, 0)`);
       ctx.fillStyle = arc;
       ctx.beginPath();
       ctx.moveTo(0, 0);
@@ -101,8 +105,8 @@ function RadarSweep({ radius }: { radius: number }) {
       const tipX = cx + Math.cos(angleRef.current) * radius;
       const tipY = cy + Math.sin(angleRef.current) * radius;
       const glow = ctx.createRadialGradient(tipX, tipY, 0, tipX, tipY, 12);
-      glow.addColorStop(0, "rgba(249,115,22,0.7)");
-      glow.addColorStop(1, "rgba(249,115,22,0)");
+      glow.addColorStop(0, `rgba(${sweepColor}, 0.7)`);
+      glow.addColorStop(1, `rgba(${sweepColor}, 0)`);
       ctx.fillStyle = glow;
       ctx.beginPath();
       ctx.arc(tipX, tipY, 12, 0, Math.PI * 2);
@@ -384,7 +388,7 @@ export default function Skills() {
       >
         {[
           { value: "15+", label: "Technologies" },
-          { value: "3+", label: "Years Building" },
+          { value: "2+", label: "Years Building" },
           { value: "∞", label: "Learning" },
         ].map((stat, i) => (
           <motion.div

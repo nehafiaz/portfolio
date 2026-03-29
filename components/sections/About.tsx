@@ -90,7 +90,7 @@ export default function About() {
             initial={{ opacity: 0, rotate: -5, scale: 0.9 }}
             whileInView={{ opacity: 1, rotate: 2, scale: 1 }}
             viewport={{ once: true }}
-            className="relative z-10 p-8 rounded-3xl bg-bg-surface/70 backdrop-blur-xl border border-border-hover shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden"
+            className="relative z-10 p-8 rounded-3xl bg-bg-surface/70 backdrop-blur-xl border border-border shadow-xl dark:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden"
           >
             <div className="flex items-center gap-2 mb-6">
               <div className="w-3 h-3 rounded-full bg-red-400" />

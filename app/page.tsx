@@ -56,7 +56,7 @@ export default function Home() {
   }, [setCurrentSection, setProgress])
 
   return (
-    <main id="main" className="relative bg-[#000000]">
+    <main id="main" className="relative bg-background">
       <Preloader />
       <CustomCursor />
       <ScrollProgress />
